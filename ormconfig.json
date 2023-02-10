@@ -1,0 +1,9 @@
+{
+    "type": "mysql",
+    "host": "101.53.146.129",
+    "port": 3306,
+    "username": "inhousedbuser",
+    "password": "6hwuctsegmqlanbdfjri",
+    "database": "inhousedb",
+    "synchronize":true
+}
