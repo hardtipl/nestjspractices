@@ -7,10 +7,12 @@ import {
   ParseIntPipe,
   Post,
   Put,
+  Res,
 } from '@nestjs/common';
+import { Response } from 'express';
 import { Bookdto } from './books.dto';
 import { Testsservice } from './test.service';
-@Controller('book')
+@Controller('testers')
 export class Testcontroller {
   constructor(private bookService: Testsservice) {}
 
@@ -19,6 +21,12 @@ export class Testcontroller {
   addbook(@Body() bookbody: Bookdto) {
     console.log(bookbody);
     return this.bookService.addingbook();
+  }
+
+  // welcome book
+  @Get('/welcome')
+  welocomebook(@Res() res: Response) {
+    return res.render('index', { name: `Hard sheth` });
   }
 
   // update book
