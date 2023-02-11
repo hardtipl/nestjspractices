@@ -8,10 +8,12 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { Bookdto } from './books.dto';
 import { Booksservice } from './books.service';
 import { Bookpipe } from './pipes/book.pipe';
 @Controller('book')
+@ApiTags('Books')
 export class Bookcontroller {
   constructor(private bookService: Booksservice) {}
 

@@ -9,10 +9,12 @@ import {
   Put,
   Res,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { Response } from 'express';
 import { Bookdto } from './books.dto';
 import { Testsservice } from './test.service';
 @Controller('testers')
+@ApiTags('testers')
 export class Testcontroller {
   constructor(private bookService: Testsservice) {}
 
