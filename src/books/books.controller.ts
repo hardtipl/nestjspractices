@@ -7,8 +7,10 @@ import {
   ParseIntPipe,
   Post,
   Put,
+  Res,
 } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
+import { Response } from 'express';
 import { Bookdto } from './books.dto';
 import { Booksservice } from './books.service';
 import { Bookpipe } from './pipes/book.pipe';
@@ -42,9 +44,10 @@ export class Bookcontroller {
   }
   // fetch single book
   @Get('/books/:bookid')
-  fetchbook(@Param() params) {
+  fetchbook(@Param() params, @Res() res: Response) {
     console.log(params);
-    return this.bookService.fetchbook(params.bookid);
+    return res.render('orderconfirm');
+    // return this.bookService.fetchbook(params.bookid);
   }
   @Get('/books/:bookid/:subid')
   fetchbooksub(@Param('subid', ParseIntPipe) params) {
