@@ -57,3 +57,5 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+Please execute this command to build the css file
+$ npx tailwindcss -i ./public/tailwind.css -o ./public/styles.css --watch
